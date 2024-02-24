@@ -40,7 +40,26 @@
 						The fields for Back Bay and Mission Hill Neighborhoods had null values for different demographic metrics as noted in this map of different neighborhoods in Boston and Asian Pacific Islander population. Although it might not have been noticed at first a closer look at the data and map showed these issues. I removed those neighborhoods from my analysis for more accurate visualizations. 
 						</figcaption>
 					</figure>
-
+					<figure>
+						<img src="IMAGE_FILENAME" alt="" />
+						<figcaption>
+							Additionally, I found that there was missing data (both demographic and for unit type) for the Fenway, North End, and West End Neighborhoods. This can be seen in the table of neighborhood and unit metrics below. I also removed these neighborhoods from my analysis for clearer visualizations. 
+						</figcaption>
+					</figure>
+					<figure>
+						<img src="IMAGE_FILENAME" alt="" />
+						<figcaption>
+							Much of the data was not actualized by year, and therefore was the same over the 20 year period. For example, the data for racial group populations was the same every year because the census does not report by neighborhood but instead by census block group. Additionally, the data for occupied units and vacant units was also the same over time. The only data that was different over time was owner occupied rate and vacancy rate.  Therefore, much of the analysis I did was limited to specific years or did not involve a time component, limiting my analysis a bit. This can be seen in the visualization below that looks at different minority populations over time in Allston.
+						</figcaption>
+					</figure>
+					<figure>
+						<img src="IMAGE_FILENAME" alt="" />
+						<figcaption>
+							Finally, when looking at the data joins between zip codes and neighborhoods, specifically in the spatial data, they don’t seem accurate. I had a difficult time figuring out the best practice on 1) how to ensure that the zipcodes were encoding for the right neighborhoods, and 2) merging zip codes so a new geography was made to create the boundary of the neighborhoods. I continued to have this issue and I am interested in learning work-arounds for this problem. You can see some of these spatial issues highlighted in the map below which shows a geography clearly not in downtown Boston being encoded as Downtown. 
+						</figcaption>
+					</figure>
+					<p>Overall, to make the data easier to work with I also made sure to remove any nulls to ensure that these data points did not come out in my visualizations.
+					</p>
 			</section>
 
 			<h3>Overall Analysis Questions</h3>
