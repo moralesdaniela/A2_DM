@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
 <head>
 	<title>Vis & Society Assignment 2</title>
 	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
@@ -23,59 +24,101 @@
 
 			<section>
 				<h2>Dataset</h2>
-	
+
 				<p>
-					The dataset I worked with highlights corporate ownership and owner occupancy rates in different Boston neighborhoods over a 20 year time period (2004 to 2024). The data comes from property assessment records. Additionally, this dataset shows different demographic data  and housing data (including number of vacant units and occupied units). From the metadata corporate ownership is defined by identifying corporations “with markers such as “LLC”...“Corp”, “Realty”..."Bank"...”. There is a note in the metadata that some corporate-owned properties may not be classified as such or other properties may be misclassified. Owner occupancy rates are defined as the rates of properties that are occupied by property owners. The data can be accessed with permission from 11.C85 professors and the Warren Group.
-					</p>
+					The dataset I worked with highlights corporate ownership and owner occupancy rates in different
+					Boston neighborhoods over a 20 year time period (2004 to 2024). The data comes from property
+					assessment records. Additionally, this dataset shows different demographic data and housing data
+					(including number of vacant units and occupied units). From the metadata corporate ownership is
+					defined by identifying corporations “with markers such as “LLC”...“Corp”, “Realty”..."Bank"...”.
+					There is a note in the metadata that some corporate-owned properties may not be classified as such
+					or other properties may be misclassified. Owner occupancy rates are defined as the rates of
+					properties that are occupied by property owners. The data can be accessed with permission from
+					11.C85 professors and the Warren Group.
+				</p>
 			</section>
 
 			<section>
 				<h3>Dataset Quality</h3>
-	
-				<p>Initially when assessing the data I found some issues such as: 
-					</p>
 
-					<figure>
-						<img src="images/figure1.png" alt="Figure 1" />
-						<figcaption>
-						The fields for Back Bay and Mission Hill Neighborhoods had null values for different demographic metrics as noted in this map of different neighborhoods in Boston and Asian Pacific Islander population. Although it might not have been noticed at first a closer look at the data and map showed these issues. I removed those neighborhoods from my analysis for more accurate visualizations. 
-						</figcaption>
-					</figure>
-					<figure>
-						<img src="images/figure2.png" alt="Figure 2" />
-						<figcaption>
-							Additionally, I found that there was missing data (both demographic and for unit type) for the Fenway, North End, and West End Neighborhoods. This can be seen in the table of neighborhood and unit metrics below. I also removed these neighborhoods from my analysis for clearer visualizations. 
-						</figcaption>
-					</figure>
-					<figure>
-						<img src="images/figure3.png" alt="Figure 3" />
-						<figcaption>
-							Much of the data was not actualized by year, and therefore was the same over the 20 year period. For example, the data for racial group populations was the same every year because the census does not report by neighborhood but instead by census block group. Additionally, the data for occupied units and vacant units was also the same over time. The only data that was different over time was owner occupied rate and vacancy rate.  Therefore, much of the analysis I did was limited to specific years or did not involve a time component, limiting my analysis a bit. This can be seen in the visualization below that looks at different minority populations over time in Allston.
-						</figcaption>
-					</figure>
-					<figure>
-						<img src="images/figure4.png" alt="Figure 4" />
-						<figcaption>
-							Finally, when looking at the data joins between zip codes and neighborhoods, specifically in the spatial data, they don’t seem accurate. I had a difficult time figuring out the best practice on 1) how to ensure that the zipcodes were encoding for the right neighborhoods, and 2) merging zip codes so a new geography was made to create the boundary of the neighborhoods. I continued to have this issue and I am interested in learning work-arounds for this problem. You can see some of these spatial issues highlighted in the map below which shows a geography clearly not in downtown Boston being encoded as Downtown. 
-						</figcaption>
-					</figure>
-					<p>Overall, to make the data easier to work with I also made sure to remove any nulls to ensure that these data points did not come out in my visualizations.
-					</p>
+				<p>Initially when assessing the data I found some issues such as:
+				</p>
+
+				<figure>
+					<img src="images/figure1.png" alt="Figure 1" />
+					<figcaption>
+						The fields for Back Bay and Mission Hill Neighborhoods had null values for different demographic
+						metrics as noted in this map of different neighborhoods in Boston and Asian Pacific Islander
+						population. Although it might not have been noticed at first a closer look at the data and map
+						showed these issues. I removed those neighborhoods from my analysis for more accurate
+						visualizations.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/figure2.png" alt="Figure 2" />
+					<figcaption>
+						Additionally, I found that there was missing data (both demographic and for unit type) for the
+						Fenway, North End, and West End Neighborhoods. This can be seen in the table of neighborhood and
+						unit metrics below. I also removed these neighborhoods from my analysis for clearer
+						visualizations.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/figure3.png" alt="Figure 3" />
+					<figcaption>
+						Much of the data was not actualized by year, and therefore was the same over the 20 year period.
+						For example, the data for racial group populations was the same every year because the census
+						does not report by neighborhood but instead by census block group. Additionally, the data for
+						occupied units and vacant units was also the same over time. The only data that was different
+						over time was owner occupied rate and vacancy rate. Therefore, much of the analysis I did was
+						limited to specific years or did not involve a time component, limiting my analysis a bit. This
+						can be seen in the visualization below that looks at different minority populations over time in
+						Allston.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/figure4.png" alt="Figure 4" />
+					<figcaption>
+						Finally, when looking at the data joins between zip codes and neighborhoods, specifically in the
+						spatial data, they don’t seem accurate. I had a difficult time figuring out the best practice on
+						1) how to ensure that the zipcodes were encoding for the right neighborhoods, and 2) merging zip
+						codes so a new geography was made to create the boundary of the neighborhoods. I continued to
+						have this issue and I am interested in learning work-arounds for this problem. You can see some
+						of these spatial issues highlighted in the map below which shows a geography clearly not in
+						downtown Boston being encoded as Downtown.
+					</figcaption>
+				</figure>
+				<p>Overall, to make the data easier to work with I also made sure to remove any nulls to ensure that
+					these data points did not come out in my visualizations.
+				</p>
 			</section>
 
 			<h3>Overall Analysis Questions</h3>
 			<ol>
 				<li> What neighborhoods in Boston face the most speculation?</li>
-				<p> I am interested in answering this question because I am cognizant of the impacts evictions have on neighborhoods, such as gentrification and speculation. After reading the articles on eviction, I suspect that speculation would occur in neighborhoods of color, but am interested to see which neighborhoods specifically are most impacted. </p>
+				<p> I am interested in answering this question because I am cognizant of the impacts evictions have on
+					neighborhoods, such as gentrification and speculation. After reading the articles on eviction, I
+					suspect that speculation would occur in neighborhoods of color, but am interested to see which
+					neighborhoods specifically are most impacted. </p>
 				<li>What minority groups are most affected by speculation in Boston?
 				</li>
-				<p>Similarly to question one, since we are focused on corporate ownership and absentee owners I am interested in which racial groups are impacted by speculation. I believe that it is likely not a fair distribution of speculation around the city and is likely centered in Black and Brown communities as mentioned in the article by Huntley Et. al. Answering this question might provide insight to which neighborhoods could benefit from policies that limit speculation in the future and provide assistance to these communities. 
+				<p>Similarly to question one, since we are focused on corporate ownership and absentee owners I am
+					interested in which racial groups are impacted by speculation. I believe that it is likely not a
+					fair distribution of speculation around the city and is likely centered in Black and Brown
+					communities as mentioned in the article by Huntley Et. al. Answering this question might provide
+					insight to which neighborhoods could benefit from policies that limit speculation in the future and
+					provide assistance to these communities.
 				</p>
 				<li>How has corporate ownership changed in each Boston neighborhood overtime?</li>
-				<p>I was interested in this question because according to the article (Huntley Et. al) there were more evictions during COVID, and I am interested if corporate ownership in Boston went up after 2020. Having temporal data allows us to see interesting trends that can highlight injustices in our communities. 
+				<p>I was interested in this question because according to the article (Huntley Et. al) there were more
+					evictions during COVID, and I am interested if corporate ownership in Boston went up after 2020.
+					Having temporal data allows us to see interesting trends that can highlight injustices in our
+					communities.
 				</p>
 				<li>How has owner occupancy changed in each Boston neighborhood overtime?</li>
-				<p> I am curious how owner occupancy has changed as well in the area to see if similarly to corporate ownership increasing over time, perhaps private ownership has increased. This could be an indication of gentrification and displacement of minority populations.</p>
+				<p> I am curious how owner occupancy has changed as well in the area to see if similarly to corporate
+					ownership increasing over time, perhaps private ownership has increased. This could be an indication
+					of gentrification and displacement of minority populations.</p>
 			</ol>
 		</section>
 
@@ -83,44 +126,108 @@
 			<h2>Discoveries & Insights</h2>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure5.png" alt="Figure 5" />
 				<figcaption>
-					To answer questions 1 and 3, I used a line chart to look at the rates of corporate ownership across Boston neighborhoods over time. When looking at these rates from 2004 to 2020 we see a general trend of rates increasing across all Boston neighborhoods. We see the biggest change over time in the South Boston Waterfront neighborhood (which had a rate of 0.38 in 2024) and Downtown (with a rate 0.34 in 2024). Additionally, similar to the findings from the article by Huntley Et. al, we see an increase in corporate ownership rates after 2020 across all neighborhoods, likely indicating a displacement of the original tenants of these properties. I am interested in seeing what the relationship would be between corporate ownership and income level by census tract. 
+					To answer questions 1 and 3, I used a line chart to look at the rates of corporate ownership across
+					Boston neighborhoods over time. When looking at these rates from 2004 to 2020 we see a general trend
+					of rates increasing across all Boston neighborhoods. We see the biggest change over time in the
+					South Boston Waterfront neighborhood (which had a rate of 0.38 in 2024) and Downtown (with a rate
+					0.34 in 2024). Additionally, similar to the findings from the article by Huntley Et. al, we see an
+					increase in corporate ownership rates after 2020 across all neighborhoods, likely indicating a
+					displacement of the original tenants of these properties. <b>I am interested in seeing what the
+						relationship would be between corporate ownership and income level by census tract.</b>
 				</figcaption>
 			</figure>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure6.png" alt="Figure 6" />
 				<figcaption>
-					We look at the owner occupancy rate here with a line graph and see that the rates across all neighborhoods are much more uniform over time than the corporate ownership rate. In many neighborhoods in Boston, there is a small decline in owner occupancy over time especially after 2020. From this visualization, I have other questions that come up for me such as, how does owner occupancy rate relate to vacant units and occupied units currently across Boston? This question may be helpful in understanding what portion of properties owned by private owners are being used as assets by absentee owners versus being lived in. 
+					We look at the owner occupancy rate here with a line graph and see that the rates across all
+					neighborhoods are much more uniform over time than the corporate ownership rate. In many
+					neighborhoods in Boston, there is a small decline in owner occupancy over time especially after
+					2020. <b>From this visualization, I have other questions that come up for me such as, how does
+						owner occupancy rate relate to vacant units and occupied units currently across Boston? </b>
+					This question may be helpful in understanding what portion of properties owned by private owners
+					are being used as assets by absentee owners versus being lived in.
 				</figcaption>
 			</figure>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure7.png" alt="Figure 7" />
 				<figcaption>
-					To answer the additional question posed above, I use a bar chart and table to show owner occupancy rate, and number of occupied and vacant units in 2024. I filtered the data for this year to see what owner occupancy rate looks like today without being an aggregate average of the metric over time.  I also made owner occupancy a dimension for this analysis. One thing that stands out to me right away from the data is the number of housing units in Dorchester; I wonder if this data is accurate or if it was a mistake in entering the values. We see that owner occupancy rate doesn’t necessarily correlate with unit vacancy, but we see that Dorchester has almost 50% owner occupancy and has the highest number of vacant units (over 60,000 units). Additionally, this chart makes me wonder how the owner occupancy rate relates to rental rates in each neighborhood.
+					To answer the additional question posed above, I use a bar chart and table to show owner occupancy
+					rate, and number of occupied and vacant units in 2024. I filtered the data for this year to see what
+					owner occupancy rate looks like today without being an aggregate average of the metric over time. I
+					also made owner occupancy a dimension for this analysis. One thing that stands out to me right away
+					from the data is the number of housing units in Dorchester; I wonder if this data is accurate or if
+					it was a mistake in entering the values. We see that owner occupancy rate doesn’t necessarily
+					correlate with unit vacancy, but we see that Dorchester has almost 50% owner occupancy and has the
+					highest number of vacant units (over 60,000 units). Additionally, this chart makes me wonder <b>how
+						the owner occupancy rate relates to rental rates in each neighborhood.</b>
 				</figcaption>
 			</figure>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure8.png" alt="Figure 8" />
 				<figcaption>
-					To explore where different racial groups live in Boston, and how these groups might be affected by speculation I mapped the population of different racial groups by Boston neighborhoods. Since the years do not affect the populations (they are all the same overtime), this map serves as a general trend of race in each neighborhood, and can be used for analysis of 2004 to 2024. You can see Mission Hill and Back Bay as having no value since I removed them from the map (they had no data points). I also made the choice to not include populations categorized as AIAN (American Indian and Alaska Native), Other, or Two or More Races because their populations were very small. I found that Dorchester had the largest portion of Black, Hispanic, and Asian residents for each group respectively. When using the bar chart above we see that this might be problematic when considering the number of vacant units in Dorchester. Additionally, there is a large Hispanic population in East Boston, and a large Hispanic and Black population in Roxbury. When comparing the neighborhoods of high minority populations in this visualization and the neighborhoods with larger vacant units in the barchart above it, I make the assumption that Black and Hispanic residents are likely most impacted by evictions/speculation. But, this made me want to have a more clear way of visualizing this hypothesis. From this analysis another question arose: is there a relationship between neighborhoods that have more corporate ownership and a large amount of public housing or low income housing?  
+					To explore where different racial groups live in Boston, and how these groups might be affected by
+					speculation I mapped the population of different racial groups by Boston neighborhoods. Since the
+					years do not affect the populations (they are all the same overtime), this map serves as a general
+					trend of race in each neighborhood, and can be used for analysis of 2004 to 2024. You can see
+					Mission Hill and Back Bay as having no value since I removed them from the map (they had no data
+					points). I also made the choice to not include populations categorized as AIAN (American Indian and
+					Alaska Native), Other, or Two or More Races because their populations were very small. I found that
+					Dorchester had the largest portion of Black, Hispanic, and Asian residents for each group
+					respectively. When using the bar chart above we see that this might be problematic when considering
+					the number of vacant units in Dorchester. Additionally, there is a large Hispanic population in East
+					Boston, and a large Hispanic and Black population in Roxbury. When comparing the neighborhoods of
+					high minority populations in this visualization and the neighborhoods with larger vacant units in
+					the barchart above it, I make the assumption that Black and Hispanic residents are likely most
+					impacted by evictions/speculation. But, this made me want to have a more clear way of visualizing
+					this hypothesis. From this analysis another question arose: <b>is there a relationship between
+						neighborhoods that have more corporate ownership and a large amount of public housing or low
+						income housing?</b>
 				</figcaption>
 			</figure>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure9.png" alt="Figure 9" />
 				<figcaption>
-					To more clearly visualize the relationship between the corporate ownership rate, owner occupancy rate, and  race by neighborhood, I created a color coded table where larger values are a darker blue and smaller values are a light green. I made sure to take the average for the rates and filtered it for 2020 to understand where the landscape stood during the pandemic. Here we see as we saw above that Dorchester has the largest minority population, as well as a large white population; the neighborhood’s corporate ownership rate is mid-range in our set of values and the owner occupancy rate is also mid-range. Where I see more interesting data is with neighborhoods like South Boston’s Waterfront and Downtown that have a large White population, high corporate ownership and low owner occupancy rate. I suspect this is due to new construction and investment in these neighborhoods. Roxbury is also a neighborhood with a relatively high Black and Hispanic population that may be affected by speculation when looking at the low owner occupancy rate and the higher corporate ownership rate. 
+					To more clearly visualize the relationship between the corporate ownership rate, owner occupancy
+					rate, and race by neighborhood, I created a color coded table where larger values are a darker blue
+					and smaller values are a light green. I made sure to take the average for the rates and filtered it
+					for 2020 to understand where the landscape stood during the pandemic. Here we see as we saw above
+					that Dorchester has the largest minority population, as well as a large white population; the
+					neighborhood’s corporate ownership rate is mid-range in our set of values and the owner occupancy
+					rate is also mid-range. Where I see more interesting data is with neighborhoods like South Boston’s
+					Waterfront and Downtown that have a large White population, high corporate ownership and low owner
+					occupancy rate. I suspect this is due to new construction and investment in these neighborhoods.
+					Roxbury is also a neighborhood with a relatively high Black and Hispanic population that may be
+					affected by speculation when looking at the low owner occupancy rate and the higher corporate
+					ownership rate.
 				</figcaption>
 			</figure>
 
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/figure10.png" alt="Figure 10" />
 				<figcaption>
-					While we don’t have data for the total public housing units or units of low income housing in Boston, I thought it would be interesting to look at the relationship between the Group quarters population and Corporate Ownership rate. With this map, I mapped the population in Group quarters by neighborhood and scaled the symbols by the average corporate ownership by each respective neighborhood. By interpreting the map, we find that Downtown has the largest population of folks in group housing and one of the highest corporate ownership rates. Additionally, we see neighborhoods like Longwood also having a large population in group housing and a larger corporate ownership rate. This may suggest that there is a disparity between inclusive and affordable housing in these neighborhoods, and there has been other social injustices and changes in these neighborhoods to allow more corporate ownership to exist. Group Quarters is also a variable that is not clearly defined in the metadata, but I think from additional research it may include properties such as colleges, detention centers, group housing, and homeless shelters. Regardless it shows a disparity between ownership and folks who live in said neighborhoods. 
+					While we don’t have data for the total public housing units or units of low income housing in
+					Boston, I thought it would be interesting to look at the relationship between the group quarters
+					population and corporate ownership rate in 2024. With this map, I mapped the population in group
+					quarters by
+					neighborhood and scaled the symbols by the average corporate ownership by each respective
+					neighborhood. I also chose to reduce some of the noise on the map and filtered out some of the
+					zipcodes so that only one zipcode per neighborhood was shown.
+					This meant that each neighborhood was only represented by one circle symbol.
+					By interpreting the map, we find that Downtown has the largest population of folks in
+					group housing and one of the highest corporate ownership rates. Additionally, we see neighborhoods
+					like Longwood also having a large population in group housing and a larger corporate ownership rate.
+					This may suggest that there is a disparity between inclusive and affordable housing in these
+					neighborhoods, and there has been other social injustices and changes in these neighborhoods to
+					allow more corporate ownership to exist. Group Quarters is also a variable that is not clearly
+					defined in the metadata, but I think from additional research it may include properties such as
+					colleges, detention centers, group housing, and homeless shelters. Regardless it shows a disparity
+					between ownership and folks who live in said neighborhoods.
 				</figcaption>
 			</figure>
 
@@ -130,12 +237,34 @@
 		<section>
 			<h2>Summary</h2>
 
-			<p>There were several limitations in the data that prevented me from doing a more thorough analysis, such as not having data that was collected every year (data was the same every year for several measures). Only having corporate ownership rates and owner occupancy rates be responsive to the year made it more difficult to show relationships with other variables over time. Additionally there was data that would have been very helpful to supplement and bolster my analysis such as income data, rental rates, and more elaborate housing data. Another limitation was just my technical skills when it came to doing specific tasks primarily around merging and joining spatial data in Tableau. 
+			<p>There were several limitations in the data that prevented me from doing a more thorough analysis, such as
+				not having data that was collected every year (data was the same every year for several measures). Only
+				having corporate ownership rates and owner occupancy rates be responsive to the year made it more
+				difficult to show relationships with other variables over time. Additionally there was data that would
+				have been very helpful to supplement and bolster my analysis such as income data, rental rates, and more
+				elaborate housing data. Another limitation was just my technical skills when it came to doing specific
+				tasks primarily around merging and joining spatial data in Tableau.
 			</p>
 			<p>
-				However, from my analysis I was able to identify a few patterns or highlights. Neighborhoods like South Boston Waterfront and Downtown have seen the most changes in corporate ownership and have the highest corporate ownership today–this is likely due to new construction and investment in these neighborhoods. To show this, it would be great to have accurate property data that showed total units over time which if there was new construction or speculation. Additionally, these neighborhoods have high White populations which I am curious if is a historic trend. It would be interesting to see data on property values by neighborhood and median income in these neighborhoods over time to understand economic and social changes to the neighborhood. With further analysis, it is likely neighborhoods with a high racial minority population which are being most impacted by speculation and evictions. We see this through the maps of race by neighborhood, the bar chart of owner occupancy and vacancy by neighborhood, and the color-coded table which both highlight Roxbury and Dorchester as potential hotspots. With high levels of vacant units it is likely that the owner occupancy rate is due to private buyers that are buying the properties as an asset, and are not living in the property fulltime, likely displacing families who need housing. Additional analysis may be needed to come to an effective conclusion, however, this data tracks with the readings which provide evidence of higher evictions and speculation across minority neighborhoods in Massachusetts. 
-				</p>
+				However, from my analysis I was able to identify a few patterns or highlights. Neighborhoods like South
+				Boston Waterfront and Downtown have seen the most changes in corporate ownership and have the highest
+				corporate ownership today–this is likely due to new construction and investment in these neighborhoods.
+				To show this, it would be great to have accurate property data that showed total units over time which
+				if there was new construction or speculation. Additionally, these neighborhoods have high White
+				populations which I am curious if is a historic trend. It would be interesting to see data on property
+				values by neighborhood and median income in these neighborhoods over time to understand economic and
+				social changes to the neighborhood. With further analysis, it is likely neighborhoods with a high racial
+				minority population which are being most impacted by speculation and evictions. We see this through the
+				maps of race by neighborhood, the bar chart of owner occupancy and vacancy by neighborhood, and the
+				color-coded table which both highlight Roxbury and Dorchester as potential hotspots. With high levels of
+				vacant units it is likely that the owner occupancy rate is due to private buyers that are buying the
+				properties as an asset, and are not living in the property fulltime, likely displacing families who need
+				housing. Additional analysis may be needed to come to an effective conclusion, however, this data tracks
+				with the readings which provide evidence of higher evictions and speculation across minority
+				neighborhoods in Massachusetts.
+			</p>
 		</section>
 	</main>
 </body>
+
 </html>

@@ -1,3 +1,10 @@
 img {
     width: 100%;
 }
+figure
+> figcaption {
+    font-weight: normal;
+}
+b {
+    font-weight: bold;
+}
